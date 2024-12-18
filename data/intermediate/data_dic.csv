@@ -1,0 +1,28 @@
+,Table Name,Column Name,Data Type,Values/Format,Descriptions
+,,,,,
+,Table Name,Column Name,Data Type,Values/Format,Descriptions
+,fact_txn,TXN_DT,DATE,YYYY-MM-DD,The date of the transaction
+,fact_txn,PATIENT_ID,NUMBER,,Unique identifier for each patient (use to join to dim_patient)
+,fact_txn,PHYSICIAN_ID,NUMBER,,Unique identifier for each physician associated with the transaction (use to join to dim_physician)
+,fact_txn,TXN_LOCATION_TYPE,STRING,,Type of location where transaction occurred
+,fact_txn,INSURANCE_TYPE,STRING,,"Payment type classification as COMMERCIAL, MEDICARE, MEDICAID, CASH, UNSPECIFIED"
+,fact_txn,TXN_TYPE,STRING,"CONDITIONS
+SYMPTOMS
+CONTRAINDICATIONS
+TREATMENTS","Identifies type of information identified during each transaction:
+CONDITIONS: Medical conditions which cause a patient to be at higher risk of progressing to severe Disease X
+SYMPTOMS: Symptoms of Disease X
+CONTRAINDICATIONS: Medications which may make a patient less likely to receive Drug A
+TREATMENTS: Treatments for Disease X"
+,fact_txn,TXN_DESC,STRING,,Short description of the recorded transaction
+,dim_patient,PATIENT_ID,NUMBER,,Unique identifier for each patient (use to join to fact_txn)
+,dim_patient,BIRTH_YEAR,NUMBER,YYYY,Patient's year of birth.
+,dim_patient,GENDER,STRING,"M-Male
+F-Female
+U-Unknown",Patient's Gender
+,dim_physician,PHYSICIAN_ID,NUMBER,,Unique identifier for each physician associated with the transaction (use to join to fact_txn)
+,dim_physician,STATE,STRING,,Physician's primary state code.
+,dim_physician,PHYSICIAN_TYPE,STRING,,Physician primary specialty description
+,dim_physician,GENDER,STRING,"M-Male
+F-Female",Physician's Gender
+,dim_physician,BIRTH_YEAR,NUMBER,YYYY,Physician's year of birth.

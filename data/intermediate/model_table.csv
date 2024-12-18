@@ -1,0 +1,12 @@
+Column Name,Data Type,Values/Format,Descriptions
+PATIENT_ID,NUMBER,,Unique identifier for each patient
+TARGET,NUMBER,"1: Patient received Drug A
+0: Patient did not receive Drug A","Drug A indicator, used as target variable for machine learning"
+DISEASEX_DT,DATE,YYYY-MM-DD,Date patient was diagnosed with Disease X
+PATIENT_AGE,NUMBER,,Age of patient when diagnosed with Disease X
+PATIENT_GENDER,STRING,"M-Male
+F-Female",Patient's Gender
+NUM_CONDITIONS,NUMBER,,Number of conditions making a patient higher risk of progressing to severe Disease X
+PHYSICIAN_TYPE,STRING,,Primary specialty description of physician diagnosing Disease X
+PHYSICIAN_STATE,STRING,,State of physician diagnosing Disease X
+LOCATION_TYPE,STRING,,Type of location where patient was diagnosed with Disease X
